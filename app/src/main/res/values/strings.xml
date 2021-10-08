@@ -1,12 +1,25 @@
 <resources>
     <string name="app_name">ChilliBook</string>
     <string name="action_settings">Settings</string>
+    <string name="action_scan">Scan</string>
+    <string name="action_stop">Stop</string>
+    <string name="action_about">About</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="first_fragment_label">Chilli controller</string>
+    <string name="second_fragment_label">Your chilli stats</string>
     <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="connect">Connect</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="disconnect">Disconnect</string>
+
+    <string name="hello_first_fragment"></string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="ble_not_supported">Bluetooth  low energy not supported</string>
+    <string name="ble_device_found">Chilli controller found!</string>
+    <string name="ble_device_not_found">Chilli controller not found!</string>
+    <string name="error_bluetooth_not_supported">Error Bluetooth not supported</string>
+    <string name="content_description_main">Scanning screen to locate the Chilli BLE controller</string>
+    <string name="scanning">Scanning...</string>
+    <string name="not_scanning"></string>
+
 </resources>
