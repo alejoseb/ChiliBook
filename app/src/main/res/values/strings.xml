@@ -30,8 +30,10 @@
     <string name="humidity">Humidity:</string>
     <string name="textview2_text">Controller:</string>
 
-    <string name="default_temperature">000</string>
-    <string name="default_humidity">000%</string>
+    <string name="default_temperature">%1$s [°F]</string>
+    <string name="default_humidity">%1$s [%%]</string>
+    <string name="default_empty"></string>
+    <string name="button_clear">Clear</string>
 
     textViewTemp
 </resources>

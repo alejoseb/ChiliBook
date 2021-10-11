@@ -41,8 +41,8 @@ int soilmoisturepercent=0;
 // https://www.uuidgenerator.net/
 
 #define SERVICE_UUID        "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
-#define CHARACTERISTIC_UUID "beb5483e-36e1-4688-b7f5-ea07361b26a8"
-#define CHARACTERISTIC_UUID2 "beb5483e-36e1-4688-b7f5-ea07361b26a4"
+#define CHARACTERISTIC_UUID "beb5483e-36e1-4688-b7f5-ea07361b26a4"   //temperature
+#define CHARACTERISTIC_UUID2 "beb5483e-36e1-4688-b7f5-ea07361b26a8"  //humidity
 
 
 class MyServerCallbacks: public BLEServerCallbacks {
@@ -78,8 +78,7 @@ void setup() {
                       CHARACTERISTIC_UUID,
                       BLECharacteristic::PROPERTY_READ   |
                       BLECharacteristic::PROPERTY_WRITE  |
-                      BLECharacteristic::PROPERTY_NOTIFY |
-                      BLECharacteristic::PROPERTY_INDICATE
+                      BLECharacteristic::PROPERTY_NOTIFY 
                     );
 
 
@@ -87,10 +86,21 @@ void setup() {
                       CHARACTERISTIC_UUID2,
                       BLECharacteristic::PROPERTY_READ   |
                       BLECharacteristic::PROPERTY_WRITE  |
+                      BLECharacteristic::PROPERTY_NOTIFY 
+               
+                    );
+
+
+/*
+  pCharacteristic2 = pService->createCharacteristic(
+                      CHARACTERISTIC_UUID2,
+                      BLECharacteristic::PROPERTY_READ   |
+                      BLECharacteristic::PROPERTY_WRITE  |
                       BLECharacteristic::PROPERTY_NOTIFY |
                       BLECharacteristic::PROPERTY_INDICATE
                     );
-
+*/
+  
   // https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.descriptor.gatt.client_characteristic_configuration.xml
   // Create a BLE Descriptor
   pCharacteristic->addDescriptor(new BLE2902());
@@ -136,15 +146,17 @@ else if(soilmoisturepercent <=0)
   
     // notify changed value
     if (deviceConnected) {
-        pCharacteristic->setValue((uint8_t*)&soilmoisturepercent, 4);
+        //pCharacteristic->setValue((uint8_t*)&soilmoisturepercent, 4);
+        value =  random(50, 52);
+        pCharacteristic->setValue((uint8_t*)&value, 4);
         pCharacteristic->notify();
-        delay(20);
+        delay(1000);
 
-        
+       value =  random(70, 72);
         pCharacteristic2->setValue((uint8_t*)&value, 4);
         pCharacteristic2->notify();
         value++;
-        delay(20); // bluetooth stack will go into congestion, if too many packets are sent, in 6 hours test i was able to go as low as 3ms
+        delay(1000); // bluetooth stack will go into congestion, if too many packets are sent, in 6 hours test i was able to go as low as 3ms
     }
     // disconnecting
     if (!deviceConnected && oldDeviceConnected) {
