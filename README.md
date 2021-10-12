@@ -8,3 +8,12 @@ I use this app to check the temperature and humidity of my chili plants.
 This app is only a proof of concept, and I will add more functionality later.
 Currently, I am only interested in some statistics of humidity and temperature to keep my plants happy
 
+## The controller
+![Controller](./images/Chillibook.png)
+
+## The app dashboard
+
+
+![Dashboard](./images/Screenshot1.png)
+
+
