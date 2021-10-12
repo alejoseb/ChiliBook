@@ -9,7 +9,7 @@ This app is only a proof of concept, and I will add more functionality later.
 Currently, I am only interested in some statistics of humidity and temperature to keep my plants happy
 
 ## The controller
-![Controller](./images/chillibook.png)
+![Controller](./images/chillibook.jpg)
 
 ## The app dashboard
 
