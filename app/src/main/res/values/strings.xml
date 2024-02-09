@@ -34,6 +34,7 @@
     <string name="default_humidity">%1$s [%%]</string>
     <string name="default_empty"></string>
     <string name="button_clear">Clear</string>
+    <string name="permissions">Permissions</string>
 
     textViewTemp
 </resources>

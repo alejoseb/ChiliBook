@@ -3,6 +3,7 @@ package com.alejoseb.chillibook
 import android.bluetooth.BluetoothGattCharacteristic
 import android.bluetooth.BluetoothGattService
 import android.content.*
+import android.content.Context.RECEIVER_EXPORTED
 import android.graphics.Color
 import android.os.Bundle
 import android.os.IBinder
@@ -272,7 +273,8 @@ class SecondFragment : Fragment() {
         super.onResume()
         requireActivity().registerReceiver(
             mGattUpdateReceiver,
-        makeGattUpdateIntentFilter()
+        makeGattUpdateIntentFilter(),
+            RECEIVER_EXPORTED
         )
         if (mBluetoothLeService != null) {
             val result = mBluetoothLeService!!.connect(mDeviceAddress)
@@ -313,6 +315,8 @@ class SecondFragment : Fragment() {
 
         val gattServiceIntent = Intent(requireContext(), BluetoothLeService::class.java)
         requireActivity().bindService(gattServiceIntent, mServiceConnection!!, Context.BIND_AUTO_CREATE)
+
+
 
         // chart initialization
         linechartTemp =  _binding!!.root.findViewById<LineChart>(R.id.linechartTemp)

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.alejoseb.chillibook">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
 
     <!-- Declare this required feature if you want to make the app available to BLE-capable
@@ -11,12 +10,24 @@
 
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
-
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <!--   <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />-->
+
+      <!-- Include "neverForLocation" only if you can strongly assert that
+           your app never derives physical location from Bluetooth scan results. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
+        android:usesPermissionFlags="neverForLocation" />
+
+    <!-- Not needed if you can strongly assert that your app never derives
+         physical location from Bluetooth scan results and doesn't need location
+         access for any other purpose. -->
+
+
+
 
     <application
         android:allowBackup="true"

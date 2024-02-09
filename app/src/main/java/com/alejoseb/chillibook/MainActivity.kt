@@ -113,7 +113,12 @@ class MainActivity : AppCompatActivity() {
                     requestPermissions(
                         arrayOf(
                             Manifest.permission.ACCESS_COARSE_LOCATION,
-                            Manifest.permission.ACCESS_FINE_LOCATION
+                            Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.BLUETOOTH,
+                            Manifest.permission.BLUETOOTH_ADMIN,
+                            Manifest.permission.BLUETOOTH_SCAN,
+                            Manifest.permission.BLUETOOTH_CONNECT,
+
                         ), 1
                     )
                 }
@@ -121,6 +126,15 @@ class MainActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "Location permissions already granted", Toast.LENGTH_SHORT).show()
         }
+
+
+
+
+
+
+
+
+
 
 
     }
